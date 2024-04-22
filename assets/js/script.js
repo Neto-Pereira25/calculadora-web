@@ -6,6 +6,10 @@ function criaCalculadora() {
             this.display.value = '';
         },
 
+        apagaUm() {
+            this.display.value = this.display.value.slice(0, -1);
+        },
+
         inicia() {
             this.cliqueBotoes();
         },
@@ -20,6 +24,10 @@ function criaCalculadora() {
 
                 if (elemento.classList.contains('btn-clear')) {
                     this.clearDisplay();
+                }
+
+                if(elemento.classList.contains('btn-del')) {
+                    this.apagaUm();
                 }
             });
         },
