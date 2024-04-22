@@ -31,12 +31,14 @@ function criaCalculadora() {
 
                 if(!conta) {
                     alert('Conta Inválida');
+                    this.clearDisplay();
                     return;
                 }
 
                 this.display.value = String(conta);
             } catch (e) {
                 alert('Conta Inválida');
+                this.clearDisplay();
                 return;
             }
         },
