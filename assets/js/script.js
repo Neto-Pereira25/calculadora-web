@@ -2,7 +2,10 @@ function criaCalculadora() {
     return {
         display: document.querySelector('.display'),
         
-        
+        clearDisplay() {
+            this.display.value = '';
+        },
+
         inicia() {
             this.cliqueBotoes();
         },
@@ -13,6 +16,10 @@ function criaCalculadora() {
 
                 if (elemento.classList.contains('btn-num')) {
                     this.btnParaDisplay(elemento.innerText);
+                }
+
+                if (elemento.classList.contains('btn-clear')) {
+                    this.clearDisplay();
                 }
             });
         },
